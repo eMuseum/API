@@ -23,7 +23,7 @@ sub initialize
 {
     # Obtenir variables
     $publicIP = `ip addr | awk '/inet / {sub(/\\/.*/, "", \$2); print \$2}' | tail -1`;
-    $nginxSitePath = `cat /etc/nginx/sites-available/default | awk '/root / { print \$2 }' | head -1`;
+    $nginxSitePath = `cat /etc/nginx/sites-available/emuseum | awk '/root / { print \$2 }' | head -1`;
     
     # Borrat espais, salts de linia, el que sigui
     $publicIP =~ s/\s+$//;
